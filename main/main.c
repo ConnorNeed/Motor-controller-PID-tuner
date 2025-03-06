@@ -4,7 +4,7 @@
 #include "driver/ledc.h"
 #include "esp_log.h"
 
-#define PWM_PIN 26
+#define PWM_PIN 14
 #define LEDC_CHANNEL LEDC_CHANNEL_0
 #define LEDC_TIMER LEDC_TIMER_0
 #define LEDC_MODE LEDC_HIGH_SPEED_MODE
@@ -45,29 +45,13 @@ void app_main() {
   gpio_set_direction(LOW_PIN, GPIO_MODE_OUTPUT);
   gpio_set_level(HIGH_PIN, 1);
   gpio_set_level(LOW_PIN, 0);
-  ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, 10);
-  ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
+  int duty = 0;
   
   while(1){
-    vTaskDelay(pdMS_TO_TICKS(500));
-    ESP_LOGI(taskName, "Spinning again...");
+    ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, duty);
+    ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
+    duty = (duty + 15) % 256;
+    vTaskDelay(pdMS_TO_TICKS(3000));
+    ESP_LOGI(taskName, "Spinning again..., %d", duty);
   }
-
-
-  
-
-  // while (1) {
-  //   for (int duty = 0; duty <= 255; duty += 5) { // Increase brightness
-  //     ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, duty);
-  //     ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
-  //     vTaskDelay(pdMS_TO_TICKS(50));
-  //   }
-  //   ESP_LOGI(taskName, "LED ON");
-  //   for (int duty = 255; duty >= 0; duty -= 5) { // Decrease brightness
-  //     ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, duty);
-  //     ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
-  //     vTaskDelay(pdMS_TO_TICKS(50));
-  //   }
-  //   ESP_LOGI(taskName, "LED OFF");
-  // }
 }
