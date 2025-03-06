@@ -37,3 +37,15 @@ Below is short explanation of remaining files in the project folder.
 ```
 Additionally, the sample project contains Makefile and component.mk files, used for the legacy Make based build system. 
 They are not used or needed when building with CMake and idf.py.
+
+
+
+
+## Pinouts
+These are the agreed upon pinouts:
+- Pin a and b dictate direction (GPIO) Connect to in1 and in2 on H-Bridge
+- Pin c is PWM signal connects to ENA on H-Bridge
+- Negative 3.3-5v to black encoder wire
+- Positive 3.3-5v to blue encoder wire
+- Pin d to Yellow encoder wire
+- Pin e to green encoder wire
