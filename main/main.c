@@ -3,6 +3,7 @@
 #include "freertos/task.h"
 #include "driver/ledc.h"
 #include "esp_log.h"
+#include "encoder.h"
 
 #define PWM_PIN 14
 #define LEDC_CHANNEL LEDC_CHANNEL_0
@@ -46,12 +47,13 @@ void app_main() {
   gpio_set_level(HIGH_PIN, 1);
   gpio_set_level(LOW_PIN, 0);
   int duty = 0;
+  encoder_run();
   
-  while(1){
-    ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, duty);
-    ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
-    duty = (duty + 15) % 256;
-    vTaskDelay(pdMS_TO_TICKS(3000));
-    ESP_LOGI(taskName, "Spinning again..., %d", duty);
-  }
+  // while(1){
+  //   ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, duty);
+  //   ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
+  //   duty = (duty + 15) % 256;
+  //   vTaskDelay(pdMS_TO_TICKS(3000));
+  //   ESP_LOGI(taskName, "Spinning again..., %d", duty);
+  // }
 }
