@@ -4,6 +4,7 @@
 #include "driver/ledc.h"
 #include "esp_log.h"
 #include "encoder.h"
+#include "pid.h"
 
 #define PWM_PIN 14
 #define LEDC_CHANNEL LEDC_CHANNEL_0
@@ -50,6 +51,8 @@ void app_main() {
 
   // create thread for encoder
   xTaskCreate(encoder_run, "encoder_task", 2048, NULL, 5, NULL);
+  // xTaskCreate(encoder_run, "Encoder loop", )
+  // encoder_run();
   
   // while(1){
   //   ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, duty);
@@ -58,4 +61,12 @@ void app_main() {
   //   vTaskDelay(pdMS_TO_TICKS(3000));
   //   ESP_LOGI(taskName, "Spinning again..., %d", duty);
   // }
+
+  while(1){
+    ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, duty);
+    ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
+    duty = (duty + 15) % 256;
+    vTaskDelay(pdMS_TO_TICKS(3000));
+    ESP_LOGI(taskName, "Spinning again..., %d", duty);
+  }
 }
