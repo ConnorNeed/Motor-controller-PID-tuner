@@ -47,7 +47,9 @@ void app_main() {
   gpio_set_level(HIGH_PIN, 1);
   gpio_set_level(LOW_PIN, 0);
   int duty = 0;
-  encoder_run();
+
+  // create thread for encoder
+  xTaskCreate(encoder_run, "encoder_task", 2048, NULL, 5, NULL);
   
   // while(1){
   //   ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, duty);

@@ -4,39 +4,44 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-#define ENCODER_A_GPIO 12
-#define ENCODER_B_GPIO 13
+#define ENCODER_A_GPIO 23
+#define ENCODER_B_GPIO 22
 
-#define ENCODER_RESOLUTION 1024
-#define VELOCITY_RESOLUTION 100 // Frequency to calculate velocity (hz)
-#define FORWARD 1
-#define REVERSE 0
+#define ENCODER_RESOLUTION 512.0
+#define VELOCITY_RESOLUTION 20 // Frequency to calculate velocity (hz)
 
-volatile int encoderPos = 0;
-volatile bool encoderDirection = REVERSE;
-SemaphoreHandle_t xMutex;
-
+static volatile int encoderPos = 0;
 static double velocity = 0.0;
 
-// GPIO interrupt handlers
 static void IRAM_ATTR encoder_isr_handler_a(void *arg) {
-  if (gpio_get_level(ENCODER_B_GPIO)) {
-    __sync_fetch_and_add(&encoderPos, 1);
-    encoderDirection = FORWARD;
-  } else {
-    __sync_fetch_and_sub(&encoderPos, 1);
-    encoderDirection = REVERSE;
+  static volatile bool encoderA = false;
+  bool currentAState = gpio_get_level(ENCODER_A_GPIO);
+  bool currentBState = gpio_get_level(ENCODER_B_GPIO);
+  if (currentAState != encoderA) {
+    if (currentBState != currentAState) {
+      __sync_fetch_and_add(&encoderPos, 1);
+    } else {
+      __sync_fetch_and_sub(&encoderPos, 1);
+    }
   }
+  encoderA = currentAState;
 }
+
 static void IRAM_ATTR encoder_isr_handler_b(void *arg) {
-  if (gpio_get_level(ENCODER_A_GPIO)) {
-    __sync_fetch_and_sub(&encoderPos, 1);
-    encoderDirection = REVERSE;
-  } else {
-    __sync_fetch_and_add(&encoderPos, 1);
-    encoderDirection = FORWARD;
+  static volatile bool encoderB = false;
+  bool currentAState = gpio_get_level(ENCODER_A_GPIO);
+  bool currentBState = gpio_get_level(ENCODER_B_GPIO);
+  if (currentBState != encoderB) {
+    if (currentBState != currentAState) {
+      __sync_fetch_and_sub(&encoderPos, 1);
+    } else {
+      __sync_fetch_and_add(&encoderPos, 1);
+    }
   }
+  encoderB = currentBState;
 }
+
+double encoder_get_velocity(void) { return velocity; }
 
 void calculate_velocity() {
   static uint32_t lastTime = 0;
@@ -45,22 +50,20 @@ void calculate_velocity() {
   int deltaPosition = encoderPos - lastEncoderPos;
 
   double deltaTime = (currentTime - lastTime) / 1e6; // seconds
-  if (deltaTime > 0) {
-    velocity = deltaPosition / deltaTime;
+  if (deltaTime > 0.001) {
+    velocity = (deltaPosition / ENCODER_RESOLUTION) / deltaTime;
   }
 
   lastTime = currentTime;
   lastEncoderPos = encoderPos;
 }
 
-double encoder_get_velocity(void) { return velocity; }
-
-void encoder_run(void) {
+void encoder_run(void *) {
   gpio_config_t io_conf;
   io_conf.intr_type = GPIO_INTR_ANYEDGE;
   io_conf.pin_bit_mask = (1ULL << ENCODER_A_GPIO) | (1ULL << ENCODER_B_GPIO);
   io_conf.mode = GPIO_MODE_INPUT;
-  io_conf.pull_up_en = GPIO_PULLUP_DISABLE;
+  io_conf.pull_up_en = GPIO_PULLUP_ENABLE;
   gpio_config(&io_conf);
 
   gpio_install_isr_service(ESP_INTR_FLAG_LEVEL1);
@@ -79,11 +82,9 @@ void encoder_run(void) {
 
   // Main loop to print velocity
   while (1) {
-    calculate_velocity();
-    ESP_LOGI("ENCODER", "Position: %d, Velocity: %.2f CPS, Direction: %s",
-             encoderPos, encoder_get_velocity(),
-             encoderDirection == FORWARD ? "Forwards" : "Backwards");
-    vTaskDelay(1000 / portTICK_PERIOD_MS); // Update every 1 second
+    ESP_LOGI("ENCODER", "Position: %d, Velocity: %.2f RPS", encoderPos,
+             encoder_get_velocity());
+    vTaskDelay(100 / portTICK_PERIOD_MS); // Update every 0.1 second
   }
   esp_timer_stop(timer_handle);
   esp_timer_delete(timer_handle);
