@@ -82,9 +82,7 @@ void encoder_run(void *) {
 
   // Main loop to print velocity
   while (1) {
-    ESP_LOGI("ENCODER", "Position: %d, Velocity: %.2f RPS", encoderPos,
-             encoder_get_velocity());
-    vTaskDelay(100 / portTICK_PERIOD_MS); // Update every 0.1 second
+    vTaskDelay(500 / portTICK_PERIOD_MS); // Update every 0.1 second
   }
   esp_timer_stop(timer_handle);
   esp_timer_delete(timer_handle);
