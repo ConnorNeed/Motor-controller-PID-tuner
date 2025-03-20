@@ -2,9 +2,12 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+//#include "pidcalc.h"
+
 #define populationSize 10
 #define mutationFactor 0.2
 #define mutationProbability 0.05
+#define number_of_generations 2
 //These define the ranges that we want the randomly generated first generation to be in
 //We can adjust later to be more exponentially small when moving from kp to ki to kd like Connor suggested
 #define kpMin 1
@@ -13,9 +16,13 @@
 #define kiMax 10
 #define kdMin 1
 #define kdMax 10
+#define target1 = 10
+#define target2 = 20
+#define target3 = 15
+
+
 
 //***STRUCTS***
-
 typedef struct{
     double kp;
     double ki;
@@ -55,10 +62,30 @@ void generatePermutation(int min, int max, int result[]) {
 
 //Run fitness function on a specific tuple, we will change this once we can run our hardware
 valueTuple fitnessFunction(valueTuple tup){
-    double fitness = (tup.kp * 2) - (tup.ki * 1.5) / (tup.kd * 0.34); //Function I chose completely on random
+    //send the tuple values and start timer
+    //xQueueSend(dataQueue, &tup, portMAX_DELAY);
+    //send the first target speed
+    //QueueSend(dataQueue, &target1, portMAX_DELAY);
+    //vTaskDelay(pdMS_TO_TICKS(20000));
+    //20 secs
+    //xQueueSend(dataQueue, &target2, portMAX_DELAY);
+    //vTaskDelay(pdMS_TO_TICKS(20000));
+    //40 secs
+    //xQueueSend(dataQueue, &target3, portMAX_DELAY);
+    //vTaskDelay(pdMS_TO_TICKS(20000));
+    //60 secs end timer
+    double fitness;
+    //Get error
+    /*while (1) {
+        if (xQueueReceive(dataQueue, &fitness, portMAX_DELAY)) {
+            printf("Received Value: %d\n", receivedValue);
+        }
+    }
+    xQueueSend(dataQueue, &1, portMAX_DELAY);
+    //reset
     tup.fitnessValue = fitness;
-    valueTuple newTup = {tup.kp, tup.ki, tup.kd, fitness};
-    return newTup;
+    valueTuple newTup = {tup.kp, tup.ki, tup.kd, fitness};*/
+    //return newTup;
 }
 //Runs fitness function on a whole generation
 generation fitnessFunctionGeneration(generation gen){
@@ -187,12 +214,12 @@ generation initalGeneration(){
 int main(){
     srand(time(NULL)); //For seeding random num gen
     generation gen = initalGeneration();
-    printGeneration(gen);
-    for(int i=0;i<10;i++){
+    //printGeneration(gen);
+    for(int i=0;i<number_of_generations;i++){
         gen = fitnessFunctionGeneration(gen);
         gen = nextGeneration(gen);
     }
     gen = fitnessFunctionGeneration(gen);
-    printGeneration(gen);
+    //printGeneration(gen);
     return 0;
 }
