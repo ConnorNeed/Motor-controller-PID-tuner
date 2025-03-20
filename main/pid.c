@@ -71,3 +71,19 @@ void pid_calc(){
     vTaskDelay(pdMS_TO_TICKS(SAMPLE_TIME));
   }
 }
+
+//Interface with genetic alg
+void set_k_values(pid_input_t new_values){
+  Kd = new_values.Kd;
+  Ki = new_values.Ki;
+  Kp = new_values.Kp;
+}
+void set_target_speed(double rpm){
+  target_rpm = rpm;
+}
+float get_total_error(){
+  return total_error;
+}
+void reset_pid(){
+  //Nothing yet
+}

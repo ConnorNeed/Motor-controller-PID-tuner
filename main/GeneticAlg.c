@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
-//#include "pidcalc.h"
+#include "pid.h"
 
 #define populationSize 10
 #define mutationFactor 0.2
@@ -16,10 +16,11 @@
 #define kiMax 10
 #define kdMin 1
 #define kdMax 10
-#define target1 = 10
-#define target2 = 20
-#define target3 = 15
-
+#define target1 100
+#define target2 180
+#define target3 240
+//Time between new target rpm values
+#define delayTime 20
 
 
 //***STRUCTS***
@@ -63,29 +64,25 @@ void generatePermutation(int min, int max, int result[]) {
 //Run fitness function on a specific tuple, we will change this once we can run our hardware
 valueTuple fitnessFunction(valueTuple tup){
     //send the tuple values and start timer
-    //xQueueSend(dataQueue, &tup, portMAX_DELAY);
+    pid_input_t new_values = {.Kd=tup.kd,.Ki=tup.ki,.Kp=tup.kp};
+    set_k_values(new_values);
     //send the first target speed
-    //QueueSend(dataQueue, &target1, portMAX_DELAY);
-    //vTaskDelay(pdMS_TO_TICKS(20000));
-    //20 secs
-    //xQueueSend(dataQueue, &target2, portMAX_DELAY);
-    //vTaskDelay(pdMS_TO_TICKS(20000));
+    set_target_speed(target1);
+    vTaskDelay(pdMS_TO_TICKS(delayTime * 1000));
+    //20 secs later update speed
+    set_target_speed(target2);
+    vTaskDelay(pdMS_TO_TICKS(delayTime * 1000));
     //40 secs
-    //xQueueSend(dataQueue, &target3, portMAX_DELAY);
-    //vTaskDelay(pdMS_TO_TICKS(20000));
+    set_target_speed(target2);
+    vTaskDelay(pdMS_TO_TICKS(delayTime * 1000));
     //60 secs end timer
-    double fitness;
     //Get error
-    /*while (1) {
-        if (xQueueReceive(dataQueue, &fitness, portMAX_DELAY)) {
-            printf("Received Value: %d\n", receivedValue);
-        }
-    }
-    xQueueSend(dataQueue, &1, portMAX_DELAY);
+    double fitness = get_total_error();
     //reset
+    reset_pid();
     tup.fitnessValue = fitness;
-    valueTuple newTup = {tup.kp, tup.ki, tup.kd, fitness};*/
-    //return newTup;
+    valueTuple newTup = {tup.kp, tup.ki, tup.kd, fitness};
+    return newTup;
 }
 //Runs fitness function on a whole generation
 generation fitnessFunctionGeneration(generation gen){
