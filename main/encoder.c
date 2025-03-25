@@ -51,7 +51,7 @@ void calculate_velocity() {
 
   double deltaTime = (currentTime - lastTime) / 1e6; // seconds
   if (deltaTime > 0.001) {
-    velocity = (deltaPosition / ENCODER_RESOLUTION) / deltaTime;
+    velocity = (deltaPosition / ENCODER_RESOLUTION) / deltaTime * 60;
   }
 
   lastTime = currentTime;

@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include "pid.h"
+#include "GeneticAlg.h"
+#include "freertos/FreeRTOS.h"
+#include "esp_log.h"
 
 #define populationSize 10
 #define mutationFactor 0.2
@@ -10,17 +13,17 @@
 #define number_of_generations 2
 //These define the ranges that we want the randomly generated first generation to be in
 //We can adjust later to be more exponentially small when moving from kp to ki to kd like Connor suggested
-#define kpMin 1
-#define kpMax 10
-#define kiMin 1
-#define kiMax 10
-#define kdMin 1
-#define kdMax 10
+#define kpMin 0
+#define kpMax 1
+#define kiMin 0
+#define kiMax 0.01
+#define kdMin 0
+#define kdMax 0.001
 #define target1 100
 #define target2 180
 #define target3 240
 //Time between new target rpm values
-#define delayTime 20
+#define delayTime 10
 
 
 //***STRUCTS***
@@ -37,7 +40,7 @@ typedef struct{
 
 //***UTILITY FUNCTIONS***
 void printTuple(valueTuple tup){
-    printf("Kp=%lf, Ki=%lf, Kd=%lf, Fitness Value=%lf\n", tup.kp, tup.ki, tup.kd, tup.fitnessValue);
+    ESP_LOGI("GEN_ALG", "Kp=%lf, Ki=%lf, Kd=%lf, Fitness Value=%lf\n", tup.kp, tup.ki, tup.kd, tup.fitnessValue);
 }
 void printGeneration(generation gen){
     for(int i=0;i<populationSize;i++){
@@ -65,22 +68,28 @@ void generatePermutation(int min, int max, int result[]) {
 valueTuple fitnessFunction(valueTuple tup){
     //send the tuple values and start timer
     pid_input_t new_values = {.Kd=tup.kd,.Ki=tup.ki,.Kp=tup.kp};
+    ESP_LOGI("GEN_ALG", "Starting iteration with Kp=%f, Ki=%f, Kd=%f", new_values.Kp, new_values.Ki, new_values.Kd);
     set_k_values(new_values);
     //send the first target speed
+    ESP_LOGI("GEN_ALG", "Updating speed to %d", target1);
     set_target_speed(target1);
     vTaskDelay(pdMS_TO_TICKS(delayTime * 1000));
     //20 secs later update speed
+    ESP_LOGI("GEN_ALG", "Updating speed to %d", target2);
     set_target_speed(target2);
     vTaskDelay(pdMS_TO_TICKS(delayTime * 1000));
     //40 secs
-    set_target_speed(target2);
+    ESP_LOGI("GEN_ALG", "Updating speed to %d", target3);
+    set_target_speed(target3);
     vTaskDelay(pdMS_TO_TICKS(delayTime * 1000));
     //60 secs end timer
     //Get error
     double fitness = get_total_error();
+    ESP_LOGI("GEN_ALG", "Value finished with total error %lf", fitness);
     //reset
     reset_pid();
     tup.fitnessValue = fitness;
+    vTaskDelay(pdMS_TO_TICKS(2000));
     valueTuple newTup = {tup.kp, tup.ki, tup.kd, fitness};
     return newTup;
 }
@@ -98,7 +107,6 @@ generation nextGeneration(generation currentGeneration){
     //SELECTION STARTS HERE
     double bestFitnessValue = INFINITY;
     int bestFitnessIndex = 0;
-    int index = 0;
     //Find the minimum fitness value
     for(int i=0; i<populationSize; i++){
         double cur = currentGeneration.generationValues[i].fitnessValue;
@@ -182,6 +190,12 @@ generation nextGeneration(generation currentGeneration){
     return newGeneration; 
 };
 
+double randomValue(double max, double min){
+    double randomVal = (double)rand()/RAND_MAX;
+    randomVal = randomVal*(max-min) + min;
+    return randomVal;
+}
+
 //Creates our first generation for values
 generation initalGeneration(){
     generation initalGen;
@@ -197,26 +211,27 @@ generation initalGeneration(){
     //Create the values randomly within the ranges set
     //NEED TO CHANGE: when we set actual max and min we need to convert the rand ints to sufficiently sized doubles
     for(int i=0; i<populationSize;i++){
-        double kp = rand() % (kpMax) + kpMin;
+        double kp = randomValue(kpMax,kpMin);
         initalGen.generationValues[i].kp = kp;
-        double ki = rand() % (kiMax) + kiMin;
+        double ki = randomValue(kiMax,kiMin);
         initalGen.generationValues[i].ki = ki;
-        double kd = rand() % (kdMax) + kdMin;
+        double kd = randomValue(kdMax,kdMin);
         initalGen.generationValues[i].kd = kd;
     }
     return initalGen;
 
 }
 
-int main(){
+
+void run_gen_alg(){
     srand(time(NULL)); //For seeding random num gen
     generation gen = initalGeneration();
     //printGeneration(gen);
     for(int i=0;i<number_of_generations;i++){
+        ESP_LOGI("GEN_ALG", "Starting generation %d", i);
         gen = fitnessFunctionGeneration(gen);
         gen = nextGeneration(gen);
     }
     gen = fitnessFunctionGeneration(gen);
-    //printGeneration(gen);
-    return 0;
+    printGeneration(gen);
 }
