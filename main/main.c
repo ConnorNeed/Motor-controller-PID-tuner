@@ -15,7 +15,7 @@
 #define LEDC_RESOLUTION LEDC_TIMER_8_BIT // 16-bit resolution
 #define HIGH_PIN 4
 #define LOW_PIN 2
-#define GEN_ALG_ON 0
+#define GEN_ALG_ON 1
 
 void run_motor(){
   char *taskName = pcTaskGetName(NULL);
@@ -23,9 +23,12 @@ void run_motor(){
   while(1){
     // duty = (duty + 15) % 256;
     // ESP_LOGI("Velocity: %.2f RPS", encoder_get_velocity());
-    if (GEN_ALG_ON && count++ % 100 == 0){
-      ESP_LOGI("MAIN", "Velocity: %.2f RPM, pwm: %d", encoder_get_velocity(), get_pwm());
-    } else{
+    if(GEN_ALG_ON){
+      if (count++ % 10 == 0){
+        ESP_LOGI("Velocity", "%.2f", encoder_get_velocity());
+        ESP_LOGI("PWM", "%d", get_pwm());
+      }
+    }else{
       ESP_LOGI("MAIN", "Velocity: %.2f RPM, pwm: %d", encoder_get_velocity(), get_pwm());
     }
     ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, get_pwm());
