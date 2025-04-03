@@ -15,7 +15,7 @@
 //These define the ranges that we want the randomly generated first generation to be in
 //We can adjust later to be more exponentially small when moving from kp to ki to kd like Connor suggested
 #define kpMin 0
-#define kpMax 1
+#define kpMax 0.8
 #define kiMin 0
 #define kiMax 0.01
 #define kdMin 0
