@@ -59,7 +59,7 @@ void pid_calc(){
     proportional_term = Kp*cur_error;
     integral_term = Ki*(total_error + cur_error);
     total_error += cur_error;
-    abs_total_error += pow(cur_error, 2);
+    abs_total_error += fabs(cur_error);
     derivative_term = Kd*((cur_error - prev_error) / SAMPLE_TIME);
   
     term_sums = (proportional_term + integral_term + derivative_term);

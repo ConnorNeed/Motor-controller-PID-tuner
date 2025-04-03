@@ -11,7 +11,7 @@
 #define populationSize 25
 #define mutationFactor 0.2
 #define mutationProbability 0.5
-#define number_of_generations 50
+#define number_of_generations 15
 //These define the ranges that we want the randomly generated first generation to be in
 //We can adjust later to be more exponentially small when moving from kp to ki to kd like Connor suggested
 #define kpMin 0
@@ -24,7 +24,7 @@
 #define target2 250
 #define target3 150
 //Time between new target rpm values
-#define delayTime 5
+#define delayTime 10
 
 
 //***STRUCTS***
@@ -54,6 +54,12 @@ void generatePermutation(int min, int max, int result[]) {
         result[i] = result[j];
         result[j] = temp;
     }
+}
+
+double randomValue(double max, double min){
+    double randomVal = (double)rand()/RAND_MAX;
+    randomVal = randomVal*(max-min) + min;
+    return randomVal;
 }
 
 //***GENETIC ALGORITHM FUNCTIONS***
@@ -101,15 +107,18 @@ generation nextGeneration(generation currentGeneration){
     generation newGeneration;
     //SELECTION STARTS HERE
     double bestFitnessValue = INFINITY;
+    double averageError = 0;
     int bestFitnessIndex = 0;
     //Find the minimum fitness value
     for(int i=0; i<populationSize; i++){
         double cur = currentGeneration.generationValues[i].fitnessValue;
+        averageError = averageError + cur;
         if(cur < bestFitnessValue){
             bestFitnessValue = cur;
             bestFitnessIndex = i;
         }
     }
+    averageError = averageError/populationSize;
     ESP_LOGI("BestError", "%lf", bestFitnessValue);
     //Initialize the values of the array
     for(int i=0;i<populationSize;i++){
@@ -132,7 +141,17 @@ generation nextGeneration(generation currentGeneration){
     generatePermutation(1, populationSize-1, kiIndices);
     int kdIndices[populationSize];  // Array to store the permutation for kd
     generatePermutation(1, populationSize-1, kdIndices);
-
+    for(int i=0;i<populationSize;i++){
+        double cur = currentGeneration.generationValues[i].fitnessValue;
+        if(cur>1.1*averageError){
+            double kp = randomValue(kpMax,kpMin);
+            currentGeneration.generationValues[i].kp = kp;
+            double ki = randomValue(kiMax,kiMin);
+            currentGeneration.generationValues[i].ki = ki;
+            double kd = randomValue(kdMax,kdMin);
+            currentGeneration.generationValues[i].kd = kd;
+        } 
+    }
     for(int i=1; i<populationSize;i++){
         //Shuffles the kp values
         newGeneration.generationValues[i].kp = currentGeneration.generationValues[kpIndices[i-1]].kp;
@@ -184,11 +203,6 @@ generation nextGeneration(generation currentGeneration){
     return newGeneration; 
 };
 
-double randomValue(double max, double min){
-    double randomVal = (double)rand()/RAND_MAX;
-    randomVal = randomVal*(max-min) + min;
-    return randomVal;
-}
 
 //Creates our first generation for values
 generation initalGeneration(){

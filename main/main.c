@@ -82,7 +82,7 @@ void app_main() {
   
   // Wait for all tasks to finish
   if (GEN_ALG_ON){
-    xTaskCreate(run_gen_alg, "gen_alg_task", 4096, NULL, 2, &genAlgTaskHandle);
+    xTaskCreate(run_gen_alg, "gen_alg_task", 8192, NULL, 2, &genAlgTaskHandle);
     while (1) {
       if (eTaskGetState(genAlgTaskHandle) == eDeleted) {
         ESP_LOGI(taskName, "Genetic alg has finished running, terminating processes.");
