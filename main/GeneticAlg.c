@@ -108,6 +108,7 @@ generation nextGeneration(generation currentGeneration){
     //SELECTION STARTS HERE
     double bestFitnessValue = INFINITY;
     double averageError = 0;
+    double averageError = 0;
     int bestFitnessIndex = 0;
     //Find the minimum fitness value
     for(int i=0; i<populationSize; i++){
@@ -118,7 +119,7 @@ generation nextGeneration(generation currentGeneration){
             bestFitnessIndex = i;
         }
     }
-    averageError = averageError/populationSize;
+    averageError = averageError / populationSize;
     ESP_LOGI("BestError", "%lf", bestFitnessValue);
     //Initialize the values of the array
     for(int i=0;i<populationSize;i++){
@@ -141,16 +142,16 @@ generation nextGeneration(generation currentGeneration){
     generatePermutation(1, populationSize-1, kiIndices);
     int kdIndices[populationSize];  // Array to store the permutation for kd
     generatePermutation(1, populationSize-1, kdIndices);
-    for(int i=0;i<populationSize;i++){
+    for(int i=0; i<populationSize;i++){
         double cur = currentGeneration.generationValues[i].fitnessValue;
-        if(cur>1.1*averageError){
+        if(cur > 1.1*averageError){
             double kp = randomValue(kpMax,kpMin);
             currentGeneration.generationValues[i].kp = kp;
             double ki = randomValue(kiMax,kiMin);
             currentGeneration.generationValues[i].ki = ki;
             double kd = randomValue(kdMax,kdMin);
             currentGeneration.generationValues[i].kd = kd;
-        } 
+        }
     }
     for(int i=1; i<populationSize;i++){
         //Shuffles the kp values
