@@ -39,6 +39,8 @@ class SerialMonitor(QWidget):
         self.time_data = []
         self.best_error_data = []
         self.target_val = 0.0
+        self.pid_value = ""
+        self.file = open("data_log", 'w')
 
     def initUI(self):
         layout = QVBoxLayout()
@@ -95,6 +97,7 @@ class SerialMonitor(QWidget):
             self.serial_thread.start()
             self.start_button.setEnabled(False)
             self.stop_button.setEnabled(True)
+            self.file = open("data_log", 'a')
 
     def stop_serial(self):
         if self.serial_thread:
@@ -102,6 +105,8 @@ class SerialMonitor(QWidget):
             self.serial_thread = None
             self.start_button.setEnabled(True)
             self.stop_button.setEnabled(False)
+        if self.file is not None:
+            self.file.close()
         self.clear_data()
     
     def clear_data(self):
@@ -141,17 +146,22 @@ class SerialMonitor(QWidget):
             self.update_graph()
         elif header == "Generation":
             self.labels["Generation"].setText(f"Generation: {value}")
+            self.file.write(f"\nGeneration: {value}\n")
         elif header == "Iteration":
             self.labels["Iteration"].setText(f"Iteration: {value}")
             self.time_data.clear()
             self.target_data.clear()
             self.velocity_data.clear()
+            self.file.write(f"Iteration: {value}\n")
         elif header == "BestError":
             self.best_error_data.append(float(value))
             self.update_graph()
+            self.labels["BestError"].setText(f"Best Error: {value}")
         elif header == "LastError":
             self.labels["LastError"].setText(f"Last Error: {value}")
+            self.file.write(f"PID: {self.pid_value} had error: {value}\n")
         elif header == "PID":
+            self.pid_value = value
             self.labels["PID"].setText(f"PID: {value}")
         elif header == "PWM":
             self.labels["PWM"].setText(f"PWM: {value}")

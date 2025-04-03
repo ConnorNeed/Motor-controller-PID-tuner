@@ -9,7 +9,7 @@
 #include "esp_log.h"
 
 #define populationSize 25
-#define mutationFactor 0.5
+#define mutationFactor 0.2
 #define mutationProbability 0.5
 #define number_of_generations 50
 //These define the ranges that we want the randomly generated first generation to be in
