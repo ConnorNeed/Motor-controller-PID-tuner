@@ -40,7 +40,18 @@ typedef struct{
 }generation;
 
 //***UTILITY FUNCTIONS***
-
+void bubbleSort(generation *gen) {
+    for (int i = 0; i < populationSize - 1; i++) {
+        for (int j = 0; j < populationSize - i - 1; j++) {
+            if (gen->generationValues[j].fitnessValue > gen->generationValues[j + 1].fitnessValue) {
+                // Swap elements
+                valueTuple temp = gen->generationValues[j];
+                gen->generationValues[j] = gen->generationValues[j + 1];
+                gen->generationValues[j + 1] = temp;
+            }
+        }
+    }
+}
 void generatePermutation(int min, int max, int result[]) {
     int size = max - min + 1;
     for (int i = 0; i < size; i++) {
@@ -108,18 +119,14 @@ generation nextGeneration(generation currentGeneration){
     //SELECTION STARTS HERE
     double bestFitnessValue = INFINITY;
     double averageError = 0;
-    double averageError = 0;
     int bestFitnessIndex = 0;
-    //Find the minimum fitness value
+    bubbleSort(&currentGeneration);
     for(int i=0; i<populationSize; i++){
         double cur = currentGeneration.generationValues[i].fitnessValue;
         averageError = averageError + cur;
-        if(cur < bestFitnessValue){
-            bestFitnessValue = cur;
-            bestFitnessIndex = i;
-        }
     }
     averageError = averageError / populationSize;
+    bestFitnessIndex = currentGeneration.generationValues[0].fitnessValue;
     ESP_LOGI("BestError", "%lf", bestFitnessValue);
     //Initialize the values of the array
     for(int i=0;i<populationSize;i++){
@@ -131,29 +138,36 @@ generation nextGeneration(generation currentGeneration){
         newGeneration.generationValues[i] = currentVal;
     }
     //Store our best value in the next generation
-    newGeneration.generationValues[0] = currentGeneration.generationValues[bestFitnessIndex];
-    newGeneration.generationValues[0].fitnessValue = -1;
+    newGeneration.generationValues[0] = currentGeneration.generationValues[0];
     
+    for(int i=0;i<populationSize;i++){
+        newGeneration.generationValues[i] = currentGeneration.generationValues[i];
+        newGeneration.generationValues[i].fitnessValue = -1;
+    }
+    double bestKp = currentGeneration.generationValues[0].kp;
+    double bestKi = currentGeneration.generationValues[0].ki;
+    double bestKd = currentGeneration.generationValues[0].kd;
     //CROSSOVER STARTS HERE
     //Shuffles by creating a random permutation of 1 to populationSize - 1 for each of the attributes
-    int kpIndices[populationSize-1];  // Array to store the permutation for kp
+    int kpIndices[populationSize];  // Array to store the permutation for kp
     generatePermutation(1, populationSize-1, kpIndices);
     int kiIndices[populationSize];  // Array to store the permutation for ki
     generatePermutation(1, populationSize-1, kiIndices);
     int kdIndices[populationSize];  // Array to store the permutation for kd
     generatePermutation(1, populationSize-1, kdIndices);
-    for(int i=0; i<populationSize;i++){
+    
+    for(int i=(3*populationSize/4); i<populationSize;i++){
         double cur = currentGeneration.generationValues[i].fitnessValue;
-        if(cur > 1.1*averageError){
-            double kp = randomValue(kpMax,kpMin);
+        if(cur>averageError){
+            double kp = bestKp;
             currentGeneration.generationValues[i].kp = kp;
-            double ki = randomValue(kiMax,kiMin);
+            double ki = bestKi;
             currentGeneration.generationValues[i].ki = ki;
-            double kd = randomValue(kdMax,kdMin);
+            double kd = bestKd;
             currentGeneration.generationValues[i].kd = kd;
-        }
+        }   
     }
-    for(int i=1; i<populationSize;i++){
+    for(int i=(populationSize/4); i<populationSize;i++){
         //Shuffles the kp values
         newGeneration.generationValues[i].kp = currentGeneration.generationValues[kpIndices[i-1]].kp;
         //Shuffle ki values
@@ -167,39 +181,31 @@ generation nextGeneration(generation currentGeneration){
     //The mutation happens with a set probability for each individual value
     for(int i=1;i<populationSize;i++){
         int randNum = 100;
+        double curMutationFactor = randomValue(mutationFactor,0);
         //Determine if kp should mutate
-        randNum = rand() % (100 + 1);
-        if(randNum <= (mutationProbability*100)){
             //Determine if increase or decrease
             randNum = rand() % (2);
             if(randNum){ //Increase
-                newGeneration.generationValues[i].kp = (1-0.2)*newGeneration.generationValues[i].kp; 
+                newGeneration.generationValues[i].kp = (1-curMutationFactor)*newGeneration.generationValues[i].kp; 
             }else{ //Decrease
-                newGeneration.generationValues[i].kp = (1+0.2)*newGeneration.generationValues[i].kp;
+                newGeneration.generationValues[i].kp = (1+curMutationFactor)*newGeneration.generationValues[i].kp;
             }
-        }
         //Determine if ki should mutate
-        randNum = rand() % (100 + 1);
-        if(randNum <= (mutationProbability*100)){
             //Determine if increase or decrease
             randNum = rand() % (2);
             if(randNum){ //Increase
-                newGeneration.generationValues[i].ki = (1-0.2)*newGeneration.generationValues[i].ki; 
+                newGeneration.generationValues[i].ki = (1-curMutationFactor)*newGeneration.generationValues[i].ki; 
             }else{ //Decrease
-                newGeneration.generationValues[i].ki = (1+0.2)*newGeneration.generationValues[i].ki;
+                newGeneration.generationValues[i].ki = (1+curMutationFactor)*newGeneration.generationValues[i].ki;
             }
-        }
         //Determine if kd should mutate
-        randNum = rand() % (100 + 1);
-        if(randNum <= (mutationProbability*100)){
             //Determine if increase or decrease
             randNum = rand() % (2);
             if(randNum){ //Increase
-                newGeneration.generationValues[i].kd = (1-0.2)*newGeneration.generationValues[i].kd;
+                newGeneration.generationValues[i].kd = (1-curMutationFactor)*newGeneration.generationValues[i].kd;
             }else{ //Decrease
-                newGeneration.generationValues[i].kd = (1+0.2)*newGeneration.generationValues[i].kd;
+                newGeneration.generationValues[i].kd = (1+curMutationFactor)*newGeneration.generationValues[i].kd;
             }
-        }
     }
     return newGeneration; 
 };
@@ -220,7 +226,7 @@ generation initalGeneration(){
     //Create the values randomly within the ranges set
     //NEED TO CHANGE: when we set actual max and min we need to convert the rand ints to sufficiently sized doubles
     for(int i=0; i<populationSize;i++){
-        double kp = randomValue(kpMax,kpMin);
+        double kp = randomValue(kpMax,kpMin+0.3);
         initalGen.generationValues[i].kp = kp;
         double ki = randomValue(kiMax,kiMin);
         initalGen.generationValues[i].ki = ki;
