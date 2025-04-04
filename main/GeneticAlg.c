@@ -126,7 +126,7 @@ generation nextGeneration(generation currentGeneration){
         averageError = averageError + cur;
     }
     averageError = averageError / populationSize;
-    bestFitnessIndex = currentGeneration.generationValues[0].fitnessValue;
+    bestFitnessValue = currentGeneration.generationValues[0].fitnessValue;
     ESP_LOGI("BestError", "%lf", bestFitnessValue);
     //Initialize the values of the array
     for(int i=0;i<populationSize;i++){
