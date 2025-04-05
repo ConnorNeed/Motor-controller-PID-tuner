@@ -183,7 +183,8 @@ PID: Kp=0.348467, Ki=0.002436, Kd=0.000107 had error: 5723.506836
 Iteration: 12
 PID: Kp=0.244150, Ki=0.001815, Kd=0.000100 had error: 5160.111328
 Iteration: 13
-PID: Kp=0.250089, Ki=0.001728, Kd=0.000331 had error: 4724.825195 Best
+Best
+PID: Kp=0.250089, Ki=0.001728, Kd=0.000331 had error: 4724.825195
 Iteration: 14
 PID: Kp=0.319128, Ki=0.007367, Kd=0.000123 had error: 6439.472168
 Iteration: 15
@@ -427,7 +428,8 @@ PID: Kp=0.294701, Ki=0.001330, Kd=0.000599 had error: 5065.105957
 Iteration: 4
 PID: Kp=0.192364, Ki=0.002323, Kd=0.001205 had error: 5806.314941
 Iteration: 5
-PID: Kp=0.253440, Ki=0.001336, Kd=0.000094 had error: 4771.850098 Best
+Best
+PID: Kp=0.253440, Ki=0.001336, Kd=0.000094 had error: 4771.850098
 Iteration: 6
 PID: Kp=0.223491, Ki=0.001038, Kd=0.000141 had error: 5801.439941
 Iteration: 7
