@@ -5,6 +5,7 @@
 #include "esp_log.h"
 #include "encoder.h"
 #include "pid.h"
+#include "GeneticAlg.h"
 
 #define PWM_PIN 21
 #define LEDC_CHANNEL LEDC_CHANNEL_0
@@ -14,13 +15,22 @@
 #define LEDC_RESOLUTION LEDC_TIMER_8_BIT // 16-bit resolution
 #define HIGH_PIN 4
 #define LOW_PIN 2
+#define GEN_ALG_ON 1
 
 void run_motor(){
   char *taskName = pcTaskGetName(NULL);
+  int count = 0;
   while(1){
     // duty = (duty + 15) % 256;
     // ESP_LOGI("Velocity: %.2f RPS", encoder_get_velocity());
-    ESP_LOGI("MAIN", "Velocity: %.2f RPS, pwm: %d", encoder_get_velocity(), get_pwm());
+    if(GEN_ALG_ON){
+      if (count++ % 10 == 0){
+        ESP_LOGI("Velocity", "%.2f", encoder_get_velocity());
+        ESP_LOGI("PWM", "%d", get_pwm());
+      }
+    }else{
+      ESP_LOGI("MAIN", "Velocity: %.2f RPM, pwm: %d", encoder_get_velocity(), get_pwm());
+    }
     ledc_set_duty(LEDC_MODE, LEDC_CHANNEL, get_pwm());
     ledc_update_duty(LEDC_MODE, LEDC_CHANNEL);
     vTaskDelay(pdMS_TO_TICKS(10));
@@ -33,6 +43,7 @@ void app_main() {
   TaskHandle_t motorTaskHandle = NULL;
   TaskHandle_t encoderTaskHandle = NULL;
   TaskHandle_t pidTaskHandle = NULL;
+  TaskHandle_t genAlgTaskHandle = NULL;
   
   // Configure the PWM timer
   ledc_timer_config_t ledc_timer = {
@@ -64,20 +75,34 @@ void app_main() {
   gpio_set_level(HIGH_PIN, 1);
   gpio_set_level(LOW_PIN, 0);
 
+  // Create tasks and store their handles
   xTaskCreate(run_motor, "run_motor", 2048, NULL, 1, &motorTaskHandle);
   xTaskCreate(encoder_run, "encoder_task", 2048, NULL, 5, &encoderTaskHandle);
   xTaskCreate(pid_calc, "pid_task", 2048, NULL, 4, &pidTaskHandle);
-
-  // Create tasks and store their handles
-
+  
   // Wait for all tasks to finish
-  while (1) {
-    if (eTaskGetState(motorTaskHandle) == eDeleted &&
-      eTaskGetState(encoderTaskHandle) == eDeleted &&
-      eTaskGetState(pidTaskHandle) == eDeleted) {
-      ESP_LOGI(taskName, "All tasks have finished.");
-      break;
+  if (GEN_ALG_ON){
+    xTaskCreate(run_gen_alg, "gen_alg_task", 8192, NULL, 2, &genAlgTaskHandle);
+    while (1) {
+      if (eTaskGetState(genAlgTaskHandle) == eDeleted) {
+        ESP_LOGI(taskName, "Genetic alg has finished running, terminating processes.");
+        vTaskDelete(motorTaskHandle);
+        vTaskDelete(encoderTaskHandle);
+        vTaskDelete(motorTaskHandle);
+        break;
+      }
+      vTaskDelay(pdMS_TO_TICKS(100));
     }
-    vTaskDelay(pdMS_TO_TICKS(100));
+  }else{
+    while (1) {
+      if (eTaskGetState(motorTaskHandle) == eDeleted &&
+        eTaskGetState(encoderTaskHandle) == eDeleted &&
+        eTaskGetState(pidTaskHandle) == eDeleted) {
+        ESP_LOGI(taskName, "All tasks have finished.");
+        break;
+      }
+      vTaskDelay(pdMS_TO_TICKS(100));
+    }
   }
+
 }

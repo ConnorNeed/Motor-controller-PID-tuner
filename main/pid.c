@@ -11,13 +11,15 @@
 #define SAMPLE_TIME 100
 
 // Target rpm is modified from main thread during genetic algo
-static double target_rpm = 6;
-static double Kp = 1;
-static double Ki = 0.001;
-static double Kd = 0.0001;
+// Kp=0.257732, Ki=0.002074, Kd=0.000626, Fitness Value=5489.029297
+static double target_rpm = 300;
+static double Kp = 0.257732;//1.0/60.0;
+static double Ki = 0.002074;//0.00;
+static double Kd = 0.000626;//0.000;
 
 // Fitness value, also used for integral term
 float total_error = 0;
+float abs_total_error = 0;
 
 // Used for derivative term
 float prev_error = 0;
@@ -41,11 +43,7 @@ int get_pwm(){
 }
 
 float get_total_error(){
-  return total_error;
-}
-
-void reset_total_error(){
-  total_error = 0;
+  return abs_total_error;
 }
 
 float cur_error = 0;
@@ -61,6 +59,7 @@ void pid_calc(){
     proportional_term = Kp*cur_error;
     integral_term = Ki*(total_error + cur_error);
     total_error += cur_error;
+    abs_total_error += fabs(cur_error);
     derivative_term = Kd*((cur_error - prev_error) / SAMPLE_TIME);
   
     term_sums = (proportional_term + integral_term + derivative_term);
@@ -70,4 +69,25 @@ void pid_calc(){
     // send pwm to pin
     vTaskDelay(pdMS_TO_TICKS(SAMPLE_TIME));
   }
+}
+
+//Interface with genetic alg
+void set_k_values(pid_input_t new_values){
+  Kd = new_values.Kd;
+  Ki = new_values.Ki;
+  Kp = new_values.Kp;
+}
+void set_target_speed(double rpm){
+  target_rpm = rpm;
+}
+
+void reset_pid(){
+  total_error = 0;
+  abs_total_error = 0;
+  prev_error = 0;
+  cur_time = 0;
+  prev_time = 0;
+  pwm = 0;
+  term_sums = 0;
+  target_rpm = 0;
 }

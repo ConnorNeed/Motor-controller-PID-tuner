@@ -6,5 +6,8 @@ typedef struct pid_input{
 
 void pid_calc();
 void change_pwm(float delta);
-void set_target_spd(float target_speed);
 int get_pwm();
+void set_k_values(pid_input_t new_values);
+void set_target_speed(double rpm);
+float get_total_error();
+void reset_pid();

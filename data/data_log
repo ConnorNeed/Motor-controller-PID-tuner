@@ -1,0 +1,783 @@
+
+Generation: 0
+Iteration: 0
+PID: Kp=0.657456, Ki=0.005114, Kd=0.000499 had error: 13920.705078
+Iteration: 1
+PID: Kp=0.554502, Ki=0.003214, Kd=0.000109 had error: 11856.287109
+Iteration: 2
+PID: Kp=0.345830, Ki=0.007084, Kd=0.000700 had error: 9715.132812
+Iteration: 3
+PID: Kp=0.378965, Ki=0.009148, Kd=0.000836 had error: 7890.313965
+Iteration: 4
+PID: Kp=0.983552, Ki=0.004444, Kd=0.000276 had error: 19971.728516
+Iteration: 5
+PID: Kp=0.329390, Ki=0.005922, Kd=0.000877 had error: 6192.163574
+Iteration: 6
+PID: Kp=0.462894, Ki=0.005815, Kd=0.000306 had error: 7561.103516
+Iteration: 7
+PID: Kp=0.502427, Ki=0.002880, Kd=0.000442 had error: 10951.837891
+Iteration: 8
+PID: Kp=0.909604, Ki=0.007508, Kd=0.000070 had error: 20329.691406
+Iteration: 9
+PID: Kp=0.346958, Ki=0.001747, Kd=0.000382 had error: 6044.053223
+Iteration: 10
+PID: Kp=0.729025, Ki=0.005095, Kd=0.000118 had error: 15954.398438
+Iteration: 11
+PID: Kp=0.761851, Ki=0.009348, Kd=0.000759 had error: 15567.280273
+Iteration: 12
+PID: Kp=0.732329, Ki=0.002171, Kd=0.000528 had error: 16724.148438
+Iteration: 13
+PID: Kp=0.826954, Ki=0.008635, Kd=0.000007 had error: 18773.279297
+Iteration: 14
+PID: Kp=0.340356, Ki=0.002617, Kd=0.000144 had error: 6000.693848
+Iteration: 15
+PID: Kp=0.789239, Ki=0.003854, Kd=0.000031 had error: 16069.437500
+Iteration: 16
+PID: Kp=0.826540, Ki=0.002237, Kd=0.000758 had error: 18763.117188
+Iteration: 17
+PID: Kp=0.440269, Ki=0.004277, Kd=0.000144 had error: 10009.003906
+Iteration: 18
+PID: Kp=0.611422, Ki=0.001888, Kd=0.000661 had error: 12815.181641
+Iteration: 19
+PID: Kp=0.617171, Ki=0.007551, Kd=0.000127 had error: 11122.935547
+Iteration: 20
+PID: Kp=0.835288, Ki=0.007336, Kd=0.000982 had error: 19194.185547
+Iteration: 21
+PID: Kp=0.330892, Ki=0.001630, Kd=0.000596 had error: 6650.929688
+Iteration: 22
+PID: Kp=0.876192, Ki=0.004375, Kd=0.000975 had error: 19278.615234
+Iteration: 23
+PID: Kp=0.640406, Ki=0.002756, Kd=0.000636 had error: 16870.630859
+Iteration: 24
+PID: Kp=0.408012, Ki=0.008454, Kd=0.000249 had error: 7483.854492
+
+Generation: 1
+Iteration: 0
+PID: Kp=0.340356, Ki=0.002617, Kd=0.000144 had error: 5954.549805
+Iteration: 1
+PID: Kp=0.313571, Ki=0.001915, Kd=0.000345 had error: 6534.847656
+Iteration: 2
+PID: Kp=0.389744, Ki=0.007007, Kd=0.000717 had error: 7955.249512
+Iteration: 3
+PID: Kp=0.347358, Ki=0.001711, Kd=0.000567 had error: 6129.585449
+Iteration: 4
+PID: Kp=0.412618, Ki=0.008358, Kd=0.000252 had error: 49123.972656
+Iteration: 5
+PID: Kp=0.418875, Ki=0.005262, Kd=0.000276 had error: 8472.904297
+Iteration: 6
+PID: Kp=0.483429, Ki=0.004232, Kd=0.000129 had error: 10472.892578
+Iteration: 7
+PID: Kp=0.288378, Ki=0.002217, Kd=0.000447 had error: 5673.952148
+Iteration: 8
+PID: Kp=0.546037, Ki=0.006469, Kd=0.000953 had error: 10494.786133
+Iteration: 9
+PID: Kp=0.776422, Ki=0.001657, Kd=0.000747 had error: 15067.415039
+Iteration: 10
+PID: Kp=0.643562, Ki=0.007228, Kd=0.000424 had error: 15688.444336
+Iteration: 11
+PID: Kp=0.273216, Ki=0.003434, Kd=0.000714 had error: 5924.457031
+Iteration: 12
+PID: Kp=0.431666, Ki=0.005098, Kd=0.000798 had error: 8398.207031
+Iteration: 13
+PID: Kp=0.611323, Ki=0.003039, Kd=0.000168 had error: 13446.528320
+Iteration: 14
+PID: Kp=0.404667, Ki=0.001733, Kd=0.000108 had error: 6442.122559
+Iteration: 15
+PID: Kp=0.380154, Ki=0.010557, Kd=0.000576 had error: 7018.896973
+Iteration: 16
+PID: Kp=0.405339, Ki=0.007563, Kd=0.000171 had error: 8833.400391
+Iteration: 17
+PID: Kp=0.311281, Ki=0.003488, Kd=0.000349 had error: 6812.000000
+Iteration: 18
+PID: Kp=0.283224, Ki=0.002240, Kd=0.000123 had error: 5557.694824
+Iteration: 19
+PID: Kp=0.552236, Ki=0.002198, Kd=0.000167 had error: 12620.296875
+Iteration: 20
+PID: Kp=0.723132, Ki=0.004164, Kd=0.000361 had error: 14942.218750
+Iteration: 21
+PID: Kp=0.641838, Ki=0.005746, Kd=0.000162 had error: 14262.498047
+Iteration: 22
+PID: Kp=0.910316, Ki=0.003127, Kd=0.000172 had error: 20328.751953
+Iteration: 23
+PID: Kp=0.349641, Ki=0.005656, Kd=0.000242 had error: 6684.352051
+Iteration: 24
+PID: Kp=0.462698, Ki=0.008457, Kd=0.000144 had error: 10639.867188
+
+Generation: 2
+Iteration: 0
+PID: Kp=0.283224, Ki=0.002240, Kd=0.000123 had error: 5581.936523
+Iteration: 1
+PID: Kp=0.304734, Ki=0.002343, Kd=0.000473 had error: 5403.454102
+Iteration: 2
+PID: Kp=0.289895, Ki=0.003224, Kd=0.000670 had error: 6067.697266
+Iteration: 3
+PID: Kp=0.392173, Ki=0.002218, Kd=0.000166 had error: 7092.115234
+Iteration: 4
+PID: Kp=0.357324, Ki=0.001760, Kd=0.000550 had error: 6715.659180
+Iteration: 5
+PID: Kp=0.449390, Ki=0.001541, Kd=0.000120 had error: 7828.118164
+Iteration: 6
+PID: Kp=0.400130, Ki=0.004843, Kd=0.000141 had error: 8617.622070
+Iteration: 7
+PID: Kp=0.442916, Ki=0.002663, Kd=0.000139 had error: 6946.339355
+Iteration: 8
+PID: Kp=0.442702, Ki=0.001796, Kd=0.000574 had error: 9270.960938
+Iteration: 9
+PID: Kp=0.336012, Ki=0.002179, Kd=0.000144 had error: 5529.730957
+Iteration: 10
+PID: Kp=0.286002, Ki=0.002218, Kd=0.000124 had error: 5471.368652
+Iteration: 11
+PID: Kp=0.466174, Ki=0.006709, Kd=0.000503 had error: 8496.756836
+Iteration: 12
+PID: Kp=0.326068, Ki=0.002105, Kd=0.000116 had error: 5099.246582
+Iteration: 13
+PID: Kp=0.304346, Ki=0.007213, Kd=0.000127 had error: 5614.258301
+Iteration: 14
+PID: Kp=0.367745, Ki=0.011177, Kd=0.001009 had error: 6931.200684
+Iteration: 15
+PID: Kp=0.359885, Ki=0.002003, Kd=0.000291 had error: 5926.366699
+Iteration: 16
+PID: Kp=0.244534, Ki=0.001934, Kd=0.000811 had error: 5124.109375
+Iteration: 17
+PID: Kp=0.473006, Ki=0.002288, Kd=0.000588 had error: 8266.123047
+Iteration: 18
+PID: Kp=0.243051, Ki=0.002894, Kd=0.000294 had error: 5902.306152
+Iteration: 19
+PID: Kp=0.247802, Ki=0.005736, Kd=0.000126 had error: 5733.600098
+Iteration: 20
+PID: Kp=0.317208, Ki=0.001934, Kd=0.000121 had error: 5310.174316
+Iteration: 21
+PID: Kp=0.415757, Ki=0.002013, Kd=0.000116 had error: 5623.552246
+Iteration: 22
+PID: Kp=0.327457, Ki=0.004532, Kd=0.000140 had error: 5980.283691
+Iteration: 23
+PID: Kp=0.493869, Ki=0.002563, Kd=0.000141 had error: 8862.070312
+Iteration: 24
+PID: Kp=0.263695, Ki=0.005853, Kd=0.000119 had error: 5891.132324
+
+Generation: 3
+Iteration: 0
+PID: Kp=0.326068, Ki=0.002105, Kd=0.000116 had error: 6253.170410
+Iteration: 1
+PID: Kp=0.256068, Ki=0.001843, Kd=0.000773 had error: 5698.145508
+Iteration: 2
+PID: Kp=0.363507, Ki=0.001652, Kd=0.000103 had error: 5640.559082
+Iteration: 3
+PID: Kp=0.280984, Ki=0.002526, Kd=0.000436 had error: 5415.294922
+Iteration: 4
+PID: Kp=0.251344, Ki=0.001949, Kd=0.000109 had error: 5418.728516
+Iteration: 5
+PID: Kp=0.315082, Ki=0.002315, Kd=0.000135 had error: 6292.827148
+Iteration: 6
+PID: Kp=0.206762, Ki=0.002454, Kd=0.000097 had error: 5437.641113
+Iteration: 7
+PID: Kp=0.243994, Ki=0.002522, Kd=0.000139 had error: 5308.294922
+Iteration: 8
+PID: Kp=0.353657, Ki=0.002083, Kd=0.000291 had error: 5682.708496
+Iteration: 9
+PID: Kp=0.272127, Ki=0.005553, Kd=0.000123 had error: 6527.701660
+Iteration: 10
+PID: Kp=0.258425, Ki=0.004790, Kd=0.000123 had error: 5929.300781
+Iteration: 11
+PID: Kp=0.348467, Ki=0.002436, Kd=0.000107 had error: 5723.506836
+Iteration: 12
+PID: Kp=0.244150, Ki=0.001815, Kd=0.000100 had error: 5160.111328
+Iteration: 13
+Best
+PID: Kp=0.250089, Ki=0.001728, Kd=0.000331 had error: 4724.825195
+Iteration: 14
+PID: Kp=0.319128, Ki=0.007367, Kd=0.000123 had error: 6439.472168
+Iteration: 15
+PID: Kp=0.296517, Ki=0.002162, Kd=0.000982 had error: 5396.515625
+Iteration: 16
+PID: Kp=0.504726, Ki=0.002293, Kd=0.000106 had error: 7655.278809
+Iteration: 17
+PID: Kp=0.350768, Ki=0.001955, Kd=0.000149 had error: 5239.063477
+Iteration: 18
+PID: Kp=0.342650, Ki=0.002522, Kd=0.000803 had error: 5662.442871
+Iteration: 19
+PID: Kp=0.428793, Ki=0.002221, Kd=0.000135 had error: 6951.750488
+Iteration: 20
+PID: Kp=0.250339, Ki=0.002245, Kd=0.000112 had error: 5645.765137
+Iteration: 21
+PID: Kp=0.462322, Ki=0.001563, Kd=0.000721 had error: 6681.895508
+Iteration: 22
+PID: Kp=0.314194, Ki=0.002524, Kd=0.000126 had error: 5215.259766
+Iteration: 23
+PID: Kp=0.328912, Ki=0.005904, Kd=0.000555 had error: 7048.271484
+Iteration: 24
+PID: Kp=0.350031, Ki=0.002015, Kd=0.000453 had error: 6155.937012
+
+Generation: 4
+Iteration: 0
+PID: Kp=0.250089, Ki=0.001728, Kd=0.000331 had error: 5373.125488
+Iteration: 1
+PID: Kp=0.214714, Ki=0.001596, Kd=0.000088 had error: 5466.831543
+Iteration: 2
+PID: Kp=0.349737, Ki=0.002810, Kd=0.000140 had error: 5993.871582
+Iteration: 3
+PID: Kp=0.289545, Ki=0.001614, Kd=0.000175 had error: 5719.060547
+Iteration: 4
+PID: Kp=0.291340, Ki=0.003012, Kd=0.000166 had error: 4904.430176
+Iteration: 5
+PID: Kp=0.270479, Ki=0.002352, Kd=0.000896 had error: 5676.465332
+Iteration: 6
+PID: Kp=0.205667, Ki=0.002035, Kd=0.000079 had error: 5177.606445
+Iteration: 7
+PID: Kp=0.354826, Ki=0.002068, Kd=0.000128 had error: 5302.509766
+Iteration: 8
+PID: Kp=0.249345, Ki=0.002518, Kd=0.000332 had error: 5705.704590
+Iteration: 9
+PID: Kp=0.294840, Ki=0.002027, Kd=0.000511 had error: 5014.349121
+Iteration: 10
+PID: Kp=0.260171, Ki=0.001659, Kd=0.000943 had error: 5013.450195
+Iteration: 11
+PID: Kp=0.408047, Ki=0.001577, Kd=0.000395 had error: 6860.127441
+Iteration: 12
+PID: Kp=0.235658, Ki=0.002420, Kd=0.000278 had error: 5479.334473
+Iteration: 13
+PID: Kp=0.345511, Ki=0.002557, Kd=0.000111 had error: 5867.095703
+Iteration: 14
+PID: Kp=0.204682, Ki=0.001814, Kd=0.000097 had error: 5628.155762
+Iteration: 15
+PID: Kp=0.242086, Ki=0.001742, Kd=0.000349 had error: 4997.729004
+Iteration: 16
+PID: Kp=0.212231, Ki=0.001502, Kd=0.000288 had error: 5497.368164
+Iteration: 17
+PID: Kp=0.358702, Ki=0.001633, Kd=0.000123 had error: 5954.131836
+Iteration: 18
+PID: Kp=0.314398, Ki=0.001791, Kd=0.000154 had error: 5816.973633
+Iteration: 19
+PID: Kp=0.233539, Ki=0.001843, Kd=0.000856 had error: 5202.267090
+Iteration: 20
+PID: Kp=0.291925, Ki=0.001832, Kd=0.000374 had error: 5325.072754
+Iteration: 21
+PID: Kp=0.321800, Ki=0.002377, Kd=0.000100 had error: 5111.501953
+Iteration: 22
+PID: Kp=0.252481, Ki=0.001712, Kd=0.000335 had error: 5355.470215
+Iteration: 23
+PID: Kp=0.320646, Ki=0.002258, Kd=0.000711 had error: 5431.246582
+Iteration: 24
+PID: Kp=0.248401, Ki=0.002260, Kd=0.000126 had error: 4997.463379
+
+Generation: 5
+Iteration: 0
+PID: Kp=0.291340, Ki=0.003012, Kd=0.000166 had error: 5878.539551
+Iteration: 1
+PID: Kp=0.229092, Ki=0.002084, Kd=0.000136 had error: 5236.360840
+Iteration: 2
+PID: Kp=0.281461, Ki=0.001459, Kd=0.000406 had error: 5048.681641
+Iteration: 3
+PID: Kp=0.248596, Ki=0.001585, Kd=0.000985 had error: 5698.098145
+Iteration: 4
+PID: Kp=0.350099, Ki=0.001647, Kd=0.000415 had error: 6296.362793
+Iteration: 5
+PID: Kp=0.323212, Ki=0.002388, Kd=0.000101 had error: 5821.894531
+Iteration: 6
+PID: Kp=0.321986, Ki=0.001665, Kd=0.000166 had error: 5542.024414
+Iteration: 7
+PID: Kp=0.235755, Ki=0.002688, Kd=0.000797 had error: 5886.625488
+Iteration: 8
+PID: Kp=0.238382, Ki=0.001466, Kd=0.000225 had error: 5257.208984
+Iteration: 9
+PID: Kp=0.244051, Ki=0.001490, Kd=0.000167 had error: 5212.938477
+Iteration: 10
+PID: Kp=0.336522, Ki=0.002746, Kd=0.000989 had error: 6527.448730
+Iteration: 11
+PID: Kp=0.295008, Ki=0.002974, Kd=0.000379 had error: 5777.249023
+Iteration: 12
+PID: Kp=0.242285, Ki=0.002448, Kd=0.000605 had error: 5431.816406
+Iteration: 13
+PID: Kp=0.297814, Ki=0.002068, Kd=0.000726 had error: 5770.058105
+Iteration: 14
+PID: Kp=0.234201, Ki=0.002084, Kd=0.000198 had error: 5317.211426
+Iteration: 15
+PID: Kp=0.201934, Ki=0.003191, Kd=0.000156 had error: 5831.777344
+Iteration: 16
+PID: Kp=0.278804, Ki=0.001763, Kd=0.000132 had error: 5057.867676
+Iteration: 17
+PID: Kp=0.330745, Ki=0.002670, Kd=0.000249 had error: 6150.380371
+Iteration: 18
+PID: Kp=0.300291, Ki=0.002688, Kd=0.000197 had error: 5415.231934
+Iteration: 19
+PID: Kp=0.314964, Ki=0.003256, Kd=0.000118 had error: 5932.202148
+Iteration: 20
+PID: Kp=0.292156, Ki=0.001591, Kd=0.000079 had error: 5902.686035
+Iteration: 21
+PID: Kp=0.300847, Ki=0.002611, Kd=0.000085 had error: 5580.443848
+Iteration: 22
+PID: Kp=0.259720, Ki=0.001537, Kd=0.000846 had error: 5295.711914
+Iteration: 23
+PID: Kp=0.392593, Ki=0.003333, Kd=0.000367 had error: 6441.255371
+Iteration: 24
+PID: Kp=0.168581, Ki=0.002402, Kd=0.000274 had error: 5784.640137
+
+Generation: 6
+Iteration: 0
+PID: Kp=0.281461, Ki=0.001459, Kd=0.000406 had error: 5460.406738
+Iteration: 1
+PID: Kp=0.293405, Ki=0.001671, Kd=0.000139 had error: 5428.034180
+Iteration: 2
+PID: Kp=0.239182, Ki=0.001520, Kd=0.000170 had error: 5330.037598
+Iteration: 3
+PID: Kp=0.223879, Ki=0.002131, Kd=0.000133 had error: 5279.549316
+Iteration: 4
+PID: Kp=0.191519, Ki=0.001754, Kd=0.000269 had error: 5009.576172
+Iteration: 5
+PID: Kp=0.281760, Ki=0.001667, Kd=0.000918 had error: 5194.775879
+Iteration: 6
+PID: Kp=0.205255, Ki=0.002837, Kd=0.000260 had error: 5380.414551
+Iteration: 7
+PID: Kp=0.205107, Ki=0.001728, Kd=0.000095 had error: 5067.472656
+Iteration: 8
+PID: Kp=0.327579, Ki=0.001204, Kd=0.000109 had error: 5409.111328
+Iteration: 9
+PID: Kp=0.161182, Ki=0.001402, Kd=0.000174 had error: 5339.686523
+Iteration: 10
+PID: Kp=0.280505, Ki=0.002093, Kd=0.001111 had error: 5623.010742
+Iteration: 11
+PID: Kp=0.329531, Ki=0.003305, Kd=0.000342 had error: 6074.410156
+Iteration: 12
+PID: Kp=0.272089, Ki=0.002777, Kd=0.000420 had error: 5206.986816
+Iteration: 13
+PID: Kp=0.324372, Ki=0.001263, Kd=0.000344 had error: 5845.426270
+Iteration: 14
+PID: Kp=0.376188, Ki=0.002668, Kd=0.000165 had error: 6273.383301
+Iteration: 15
+PID: Kp=0.273445, Ki=0.002456, Kd=0.000418 had error: 5252.327637
+Iteration: 16
+PID: Kp=0.267970, Ki=0.001745, Kd=0.000426 had error: 4934.147461
+Iteration: 17
+PID: Kp=0.328581, Ki=0.001601, Kd=0.000369 had error: 5159.106445
+Iteration: 18
+PID: Kp=0.331891, Ki=0.001720, Kd=0.000163 had error: 5646.382812
+Iteration: 19
+PID: Kp=0.256243, Ki=0.001349, Kd=0.000910 had error: 4884.039551
+Iteration: 20
+PID: Kp=0.215789, Ki=0.002188, Kd=0.000383 had error: 5277.605957
+Iteration: 21
+PID: Kp=0.341055, Ki=0.002409, Kd=0.000117 had error: 6040.799316
+Iteration: 22
+PID: Kp=0.273425, Ki=0.001417, Kd=0.000170 had error: 4922.022461
+Iteration: 23
+PID: Kp=0.241221, Ki=0.002382, Kd=0.000133 had error: 5258.291992
+Iteration: 24
+PID: Kp=0.311678, Ki=0.001357, Kd=0.000563 had error: 5035.403809
+
+Generation: 7
+Iteration: 0
+PID: Kp=0.256243, Ki=0.001349, Kd=0.000910 had error: 5548.324707
+Iteration: 1
+PID: Kp=0.296698, Ki=0.001297, Kd=0.000156 had error: 5579.580078
+Iteration: 2
+PID: Kp=0.244202, Ki=0.001591, Kd=0.000464 had error: 5278.435059
+Iteration: 3
+PID: Kp=0.198492, Ki=0.001691, Kd=0.000259 had error: 5015.716309
+Iteration: 4
+PID: Kp=0.335930, Ki=0.001463, Kd=0.000519 had error: 5944.846680
+Iteration: 5
+PID: Kp=0.222578, Ki=0.001875, Kd=0.000103 had error: 5693.703613
+Iteration: 6
+PID: Kp=0.159407, Ki=0.001686, Kd=0.000415 had error: 5661.949219
+Iteration: 7
+PID: Kp=0.260178, Ki=0.002345, Kd=0.000896 had error: 5484.429688
+Iteration: 8
+PID: Kp=0.326440, Ki=0.001407, Kd=0.000171 had error: 5540.143555
+Iteration: 9
+PID: Kp=0.311944, Ki=0.002580, Kd=0.000247 had error: 5478.480469
+Iteration: 10
+PID: Kp=0.304885, Ki=0.001956, Kd=0.000117 had error: 5425.625488
+Iteration: 11
+PID: Kp=0.169771, Ki=0.001347, Kd=0.000154 had error: 4967.686523
+Iteration: 12
+PID: Kp=0.275420, Ki=0.001158, Kd=0.000231 had error: 5650.009766
+Iteration: 13
+PID: Kp=0.181293, Ki=0.001507, Kd=0.001016 had error: 5344.625977
+Iteration: 14
+PID: Kp=0.273451, Ki=0.001610, Kd=0.000129 had error: 5512.130371
+Iteration: 15
+PID: Kp=0.229448, Ki=0.001561, Kd=0.000549 had error: 5320.374512
+Iteration: 16
+PID: Kp=0.229959, Ki=0.001488, Kd=0.000105 had error: 5221.428711
+Iteration: 17
+PID: Kp=0.270492, Ki=0.001526, Kd=0.000791 had error: 5351.508789
+Iteration: 18
+PID: Kp=0.366485, Ki=0.001112, Kd=0.000501 had error: 5132.202148
+Iteration: 19
+PID: Kp=0.215425, Ki=0.002099, Kd=0.001088 had error: 5167.402344
+Iteration: 20
+PID: Kp=0.172370, Ki=0.001134, Kd=0.000143 had error: 4998.798828
+Iteration: 21
+PID: Kp=0.277063, Ki=0.002160, Kd=0.000132 had error: 5587.877441
+Iteration: 22
+PID: Kp=0.259437, Ki=0.001333, Kd=0.000898 had error: 5706.528809
+Iteration: 23
+PID: Kp=0.295636, Ki=0.001928, Kd=0.000092 had error: 5720.680176
+Iteration: 24
+PID: Kp=0.241401, Ki=0.001516, Kd=0.000428 had error: 5485.314941
+
+Generation: 8
+Iteration: 0
+PID: Kp=0.169771, Ki=0.001347, Kd=0.000154 had error: 5559.897949
+Iteration: 1
+PID: Kp=0.195547, Ki=0.001287, Kd=0.000124 had error: 5471.767090
+Iteration: 2
+PID: Kp=0.218258, Ki=0.001859, Kd=0.000233 had error: 5497.141602
+Iteration: 3
+PID: Kp=0.294701, Ki=0.001330, Kd=0.000599 had error: 5065.105957
+Iteration: 4
+PID: Kp=0.192364, Ki=0.002323, Kd=0.001205 had error: 5806.314941
+Iteration: 5
+Best
+PID: Kp=0.253440, Ki=0.001336, Kd=0.000094 had error: 4771.850098
+Iteration: 6
+PID: Kp=0.223491, Ki=0.001038, Kd=0.000141 had error: 5801.439941
+Iteration: 7
+PID: Kp=0.303373, Ki=0.001482, Kd=0.000808 had error: 5280.838867
+Iteration: 8
+PID: Kp=0.339409, Ki=0.001201, Kd=0.000843 had error: 5433.924805
+Iteration: 9
+PID: Kp=0.190631, Ki=0.001278, Kd=0.000162 had error: 5236.038574
+Iteration: 10
+PID: Kp=0.291754, Ki=0.002630, Kd=0.000376 had error: 5381.457031
+Iteration: 11
+PID: Kp=0.251461, Ki=0.002093, Kd=0.000536 had error: 5350.048340
+Iteration: 12
+PID: Kp=0.160345, Ki=0.001272, Kd=0.000163 had error: 4986.754883
+Iteration: 13
+PID: Kp=0.314035, Ki=0.001572, Kd=0.000986 had error: 5510.437500
+Iteration: 14
+PID: Kp=0.201522, Ki=0.002098, Kd=0.000652 had error: 5430.263184
+Iteration: 15
+PID: Kp=0.158129, Ki=0.001440, Kd=0.000432 had error: 5479.495117
+Iteration: 16
+PID: Kp=0.200814, Ki=0.001331, Kd=0.000106 had error: 5703.270996
+Iteration: 17
+PID: Kp=0.362928, Ki=0.001768, Kd=0.000159 had error: 5783.704590
+Iteration: 18
+PID: Kp=0.230600, Ki=0.002104, Kd=0.000117 had error: 5254.073730
+Iteration: 19
+PID: Kp=0.206335, Ki=0.001331, Kd=0.000124 had error: 5220.554199
+Iteration: 20
+PID: Kp=0.281414, Ki=0.001545, Kd=0.000808 had error: 5419.329102
+Iteration: 21
+PID: Kp=0.294100, Ki=0.001489, Kd=0.000229 had error: 5745.623535
+Iteration: 22
+PID: Kp=0.219941, Ki=0.001621, Kd=0.000148 had error: 5130.763184
+Iteration: 23
+PID: Kp=0.181644, Ki=0.001441, Kd=0.000144 had error: 5227.451172
+Iteration: 24
+PID: Kp=0.146853, Ki=0.001529, Kd=0.000134 had error: 5604.865234
+
+Generation: 9
+Iteration: 0
+PID: Kp=0.253440, Ki=0.001336, Kd=0.000094 had error: 5171.062012
+Iteration: 1
+PID: Kp=0.179328, Ki=0.001122, Kd=0.000144 had error: 5527.943359
+Iteration: 2
+PID: Kp=0.329361, Ki=0.001174, Kd=0.000669 had error: 6093.142090
+Iteration: 3
+PID: Kp=0.252228, Ki=0.001383, Kd=0.000170 had error: 5277.442871
+Iteration: 4
+PID: Kp=0.174040, Ki=0.001540, Kd=0.000105 had error: 5506.474121
+Iteration: 5
+PID: Kp=0.166763, Ki=0.001323, Kd=0.000132 had error: 5320.009277
+Iteration: 6
+PID: Kp=0.283067, Ki=0.001810, Kd=0.000144 had error: 4867.670898
+Iteration: 7
+PID: Kp=0.222134, Ki=0.001826, Kd=0.000609 had error: 5694.531250
+Iteration: 8
+PID: Kp=0.228824, Ki=0.001326, Kd=0.000145 had error: 5118.518555
+Iteration: 9
+PID: Kp=0.255729, Ki=0.001453, Kd=0.000428 had error: 4884.883789
+Iteration: 10
+PID: Kp=0.308715, Ki=0.001455, Kd=0.000089 had error: 5759.062012
+Iteration: 11
+PID: Kp=0.206612, Ki=0.001788, Kd=0.000107 had error: 5365.347168
+Iteration: 12
+PID: Kp=0.233395, Ki=0.001240, Kd=0.000133 had error: 5302.588867
+Iteration: 13
+PID: Kp=0.200074, Ki=0.002392, Kd=0.000086 had error: 5458.893066
+Iteration: 14
+PID: Kp=0.172474, Ki=0.001529, Kd=0.000925 had error: 5418.125488
+Iteration: 15
+PID: Kp=0.310839, Ki=0.001979, Kd=0.000153 had error: 5795.467773
+Iteration: 16
+PID: Kp=0.374439, Ki=0.001198, Kd=0.000085 had error: 5521.683594
+Iteration: 17
+PID: Kp=0.298672, Ki=0.001729, Kd=0.000096 had error: 5229.715332
+Iteration: 18
+PID: Kp=0.207727, Ki=0.001247, Kd=0.000924 had error: 4941.942871
+Iteration: 19
+PID: Kp=0.254681, Ki=0.001393, Kd=0.000103 had error: 4979.624512
+Iteration: 20
+PID: Kp=0.315521, Ki=0.001448, Kd=0.000123 had error: 5365.530273
+Iteration: 21
+PID: Kp=0.288335, Ki=0.002386, Kd=0.000727 had error: 5899.447754
+Iteration: 22
+PID: Kp=0.226702, Ki=0.001036, Kd=0.000447 had error: 5350.467773
+Iteration: 23
+PID: Kp=0.212497, Ki=0.001494, Kd=0.000449 had error: 5474.804199
+Iteration: 24
+PID: Kp=0.156298, Ki=0.001321, Kd=0.000798 had error: 5120.821777
+
+Generation: 10
+Iteration: 0
+PID: Kp=0.283067, Ki=0.001810, Kd=0.000144 had error: 5779.647461
+Iteration: 1
+PID: Kp=0.298079, Ki=0.001212, Kd=0.000357 had error: 5672.679688
+Iteration: 2
+PID: Kp=0.225910, Ki=0.001138, Kd=0.001005 had error: 5114.594727
+Iteration: 3
+PID: Kp=0.207499, Ki=0.001135, Kd=0.000084 had error: 5492.416992
+Iteration: 4
+PID: Kp=0.274571, Ki=0.001061, Kd=0.000174 had error: 5415.012695
+Iteration: 5
+PID: Kp=0.182933, Ki=0.001546, Kd=0.000662 had error: 5434.622559
+Iteration: 6
+PID: Kp=0.262664, Ki=0.001522, Kd=0.000165 had error: 5334.457520
+Iteration: 7
+PID: Kp=0.255881, Ki=0.001392, Kd=0.000120 had error: 5139.061035
+Iteration: 8
+PID: Kp=0.161185, Ki=0.001281, Kd=0.000133 had error: 5420.453125
+Iteration: 9
+PID: Kp=0.146635, Ki=0.001698, Kd=0.000867 had error: 5501.393555
+Iteration: 10
+PID: Kp=0.277845, Ki=0.001299, Kd=0.000134 had error: 5382.149902
+Iteration: 11
+PID: Kp=0.256815, Ki=0.001244, Kd=0.000171 had error: 5354.386230
+Iteration: 12
+PID: Kp=0.301793, Ki=0.001614, Kd=0.000100 had error: 5379.900391
+Iteration: 13
+PID: Kp=0.241510, Ki=0.001477, Kd=0.000535 had error: 5638.682129
+Iteration: 14
+PID: Kp=0.137518, Ki=0.001493, Kd=0.000525 had error: 6132.705566
+Iteration: 15
+PID: Kp=0.324995, Ki=0.002038, Kd=0.000123 had error: 5801.191895
+Iteration: 16
+PID: Kp=0.203879, Ki=0.001992, Kd=0.000129 had error: 5176.836426
+Iteration: 17
+PID: Kp=0.171385, Ki=0.001485, Kd=0.000919 had error: 5450.581543
+Iteration: 18
+PID: Kp=0.252929, Ki=0.001602, Kd=0.000077 had error: 5025.951660
+Iteration: 19
+PID: Kp=0.212119, Ki=0.001483, Kd=0.000119 had error: 5080.038086
+Iteration: 20
+PID: Kp=0.274670, Ki=0.001339, Kd=0.000736 had error: 5138.406250
+Iteration: 21
+PID: Kp=0.243257, Ki=0.002131, Kd=0.000102 had error: 5202.293945
+Iteration: 22
+PID: Kp=0.325921, Ki=0.001121, Kd=0.000110 had error: 5247.566406
+Iteration: 23
+PID: Kp=0.252481, Ki=0.001399, Kd=0.000095 had error: 5171.356445
+Iteration: 24
+PID: Kp=0.178425, Ki=0.001047, Kd=0.000121 had error: 5235.355957
+
+Generation: 11
+Iteration: 0
+PID: Kp=0.252929, Ki=0.001602, Kd=0.000077 had error: 5340.631348
+Iteration: 1
+PID: Kp=0.190276, Ki=0.001330, Kd=0.000107 had error: 5020.043945
+Iteration: 2
+PID: Kp=0.213049, Ki=0.001203, Kd=0.000948 had error: 5515.376465
+Iteration: 3
+PID: Kp=0.241206, Ki=0.001502, Kd=0.000646 had error: 5322.543457
+Iteration: 4
+PID: Kp=0.262487, Ki=0.001356, Kd=0.000123 had error: 5353.437988
+Iteration: 5
+PID: Kp=0.289837, Ki=0.001192, Kd=0.000109 had error: 5387.367188
+Iteration: 6
+PID: Kp=0.313029, Ki=0.001230, Kd=0.000080 had error: 5472.634766
+Iteration: 7
+PID: Kp=0.305190, Ki=0.001621, Kd=0.000078 had error: 5758.289062
+Iteration: 8
+PID: Kp=0.175513, Ki=0.001326, Kd=0.000200 had error: 5328.388184
+Iteration: 9
+PID: Kp=0.288458, Ki=0.001116, Kd=0.000198 had error: 5594.499512
+Iteration: 10
+PID: Kp=0.213727, Ki=0.000899, Kd=0.000062 had error: 5112.259766
+Iteration: 11
+PID: Kp=0.246573, Ki=0.001643, Kd=0.000942 had error: 5597.504395
+Iteration: 12
+PID: Kp=0.269969, Ki=0.001444, Kd=0.000141 had error: 5578.585938
+Iteration: 13
+PID: Kp=0.233451, Ki=0.001294, Kd=0.000640 had error: 5517.970703
+Iteration: 14
+PID: Kp=0.299423, Ki=0.001666, Kd=0.000119 had error: 5661.231445
+Iteration: 15
+PID: Kp=0.219616, Ki=0.001288, Kd=0.000115 had error: 5070.200684
+Iteration: 16
+PID: Kp=0.268387, Ki=0.001576, Kd=0.000175 had error: 5908.213867
+Iteration: 17
+PID: Kp=0.154810, Ki=0.001863, Kd=0.000110 had error: 5647.951660
+Iteration: 18
+PID: Kp=0.275540, Ki=0.001134, Kd=0.000119 had error: 5248.644531
+Iteration: 19
+PID: Kp=0.255957, Ki=0.001102, Kd=0.000081 had error: 5520.926270
+Iteration: 20
+PID: Kp=0.174242, Ki=0.001473, Kd=0.000092 had error: 5153.944336
+Iteration: 21
+PID: Kp=0.267429, Ki=0.001697, Kd=0.000072 had error: 5673.311035
+Iteration: 22
+PID: Kp=0.219005, Ki=0.001411, Kd=0.000834 had error: 4975.535156
+Iteration: 23
+PID: Kp=0.190131, Ki=0.001774, Kd=0.000107 had error: 5613.848633
+Iteration: 24
+PID: Kp=0.247244, Ki=0.001657, Kd=0.000971 had error: 5070.955566
+
+Generation: 12
+Iteration: 0
+PID: Kp=0.219005, Ki=0.001411, Kd=0.000834 had error: 5373.752930
+Iteration: 1
+PID: Kp=0.222142, Ki=0.001108, Kd=0.000125 had error: 5237.118652
+Iteration: 2
+PID: Kp=0.202043, Ki=0.001391, Kd=0.000124 had error: 5229.806152
+Iteration: 3
+PID: Kp=0.278911, Ki=0.001869, Kd=0.001095 had error: 5402.716309
+Iteration: 4
+PID: Kp=0.190894, Ki=0.000995, Kd=0.000068 had error: 5151.757324
+Iteration: 5
+PID: Kp=0.158153, Ki=0.001609, Kd=0.000101 had error: 5454.085938
+Iteration: 6
+PID: Kp=0.211624, Ki=0.001303, Kd=0.000913 had error: 5369.655273
+Iteration: 7
+PID: Kp=0.213305, Ki=0.001329, Kd=0.000973 had error: 4849.909180
+Iteration: 8
+PID: Kp=0.236509, Ki=0.001014, Kd=0.000057 had error: 5403.917969
+Iteration: 9
+PID: Kp=0.201092, Ki=0.001379, Kd=0.000098 had error: 4957.175781
+Iteration: 10
+PID: Kp=0.226598, Ki=0.001394, Kd=0.000136 had error: 4983.602539
+Iteration: 11
+PID: Kp=0.318477, Ki=0.001000, Kd=0.000120 had error: 5425.179688
+Iteration: 12
+PID: Kp=0.188240, Ki=0.001213, Kd=0.000717 had error: 5235.002930
+Iteration: 13
+PID: Kp=0.231062, Ki=0.001337, Kd=0.000130 had error: 5388.112793
+Iteration: 14
+PID: Kp=0.335777, Ki=0.001536, Kd=0.000215 had error: 6055.563965
+Iteration: 15
+PID: Kp=0.209311, Ki=0.001386, Kd=0.000849 had error: 5560.367676
+Iteration: 16
+PID: Kp=0.320140, Ki=0.001435, Kd=0.000747 had error: 5366.026367
+Iteration: 17
+PID: Kp=0.212963, Ki=0.001079, Kd=0.000095 had error: 5431.983398
+Iteration: 18
+PID: Kp=0.285019, Ki=0.001263, Kd=0.001055 had error: 5277.724609
+Iteration: 19
+PID: Kp=0.194400, Ki=0.001432, Kd=0.000128 had error: 5151.947266
+Iteration: 20
+PID: Kp=0.201421, Ki=0.001144, Kd=0.000704 had error: 5070.284180
+Iteration: 21
+PID: Kp=0.302507, Ki=0.001273, Kd=0.000083 had error: 5392.990723
+Iteration: 22
+PID: Kp=0.273267, Ki=0.001394, Kd=0.000648 had error: 5041.337402
+Iteration: 23
+PID: Kp=0.205951, Ki=0.001495, Kd=0.000685 had error: 5732.552246
+Iteration: 24
+PID: Kp=0.263575, Ki=0.000982, Kd=0.000108 had error: 5283.278320
+
+Generation: 13
+Iteration: 0
+PID: Kp=0.213305, Ki=0.001329, Kd=0.000973 had error: 4993.042969
+Iteration: 1
+PID: Kp=0.163033, Ki=0.001118, Kd=0.000080 had error: 5612.985840
+Iteration: 2
+PID: Kp=0.228306, Ki=0.001383, Kd=0.000135 had error: 5050.935547
+Iteration: 3
+PID: Kp=0.220938, Ki=0.001127, Kd=0.000524 had error: 5408.509277
+Iteration: 4
+PID: Kp=0.169439, Ki=0.000963, Kd=0.000592 had error: 5145.493164
+Iteration: 5
+PID: Kp=0.156763, Ki=0.001173, Kd=0.000080 had error: 5329.783203
+Iteration: 6
+PID: Kp=0.235203, Ki=0.001465, Kd=0.000777 had error: 5553.145996
+Iteration: 7
+PID: Kp=0.193276, Ki=0.001099, Kd=0.000123 had error: 5478.639160
+Iteration: 8
+PID: Kp=0.255462, Ki=0.000879, Kd=0.001076 had error: 5164.283203
+Iteration: 9
+PID: Kp=0.208240, Ki=0.001935, Kd=0.000743 had error: 5535.913086
+Iteration: 10
+PID: Kp=0.178042, Ki=0.001109, Kd=0.001230 had error: 5397.394043
+Iteration: 11
+PID: Kp=0.267025, Ki=0.001298, Kd=0.000764 had error: 4816.783203
+Iteration: 12
+PID: Kp=0.341928, Ki=0.001594, Kd=0.000130 had error: 6168.534668
+Iteration: 13
+PID: Kp=0.198775, Ki=0.001040, Kd=0.000104 had error: 5101.065430
+Iteration: 14
+PID: Kp=0.173953, Ki=0.001070, Kd=0.000063 had error: 5163.394531
+Iteration: 15
+PID: Kp=0.214249, Ki=0.001133, Kd=0.000154 had error: 5718.803223
+Iteration: 16
+PID: Kp=0.180373, Ki=0.001402, Kd=0.000612 had error: 5517.240234
+Iteration: 17
+PID: Kp=0.265371, Ki=0.001285, Kd=0.000110 had error: 5488.475098
+Iteration: 18
+PID: Kp=0.234852, Ki=0.001194, Kd=0.000750 had error: 5169.975098
+Iteration: 19
+PID: Kp=0.253141, Ki=0.001146, Kd=0.000828 had error: 5779.038086
+Iteration: 20
+PID: Kp=0.240355, Ki=0.001204, Kd=0.000850 had error: 5644.041992
+Iteration: 21
+PID: Kp=0.174992, Ki=0.001440, Kd=0.001239 had error: 5193.763672
+Iteration: 22
+PID: Kp=0.216989, Ki=0.001291, Kd=0.000137 had error: 5270.550293
+Iteration: 23
+PID: Kp=0.219083, Ki=0.001394, Kd=0.000999 had error: 5091.320801
+Iteration: 24
+PID: Kp=0.208038, Ki=0.001303, Kd=0.001035 had error: 4857.245605
+
+Generation: 14
+Iteration: 0
+PID: Kp=0.267025, Ki=0.001298, Kd=0.000764 had error: 5116.608398
+Iteration: 1
+PID: Kp=0.230141, Ki=0.001164, Kd=0.000925 had error: 4999.396484
+Iteration: 2
+PID: Kp=0.191959, Ki=0.001196, Kd=0.001070 had error: 5301.691895
+Iteration: 3
+PID: Kp=0.203533, Ki=0.001233, Kd=0.000121 had error: 5148.510742
+Iteration: 4
+PID: Kp=0.210507, Ki=0.001339, Kd=0.000960 had error: 5300.307617
+Iteration: 5
+PID: Kp=0.234537, Ki=0.001228, Kd=0.000086 had error: 5028.894043
+Iteration: 6
+PID: Kp=0.239932, Ki=0.001377, Kd=0.001032 had error: 5606.277832
+Iteration: 7
+PID: Kp=0.145295, Ki=0.001084, Kd=0.001035 had error: 5348.994629
+Iteration: 8
+PID: Kp=0.271029, Ki=0.001176, Kd=0.001060 had error: 5998.494629
+Iteration: 9
+PID: Kp=0.230464, Ki=0.000784, Kd=0.000847 had error: 5240.785645
+Iteration: 10
+PID: Kp=0.179415, Ki=0.001048, Kd=0.000426 had error: 5352.671875
+Iteration: 11
+PID: Kp=0.200856, Ki=0.001040, Kd=0.000851 had error: 4837.769043
+Iteration: 12
+PID: Kp=0.209948, Ki=0.001447, Kd=0.000789 had error: 5768.225586
+Iteration: 13
+PID: Kp=0.211936, Ki=0.001403, Kd=0.000596 had error: 5063.191406
+Iteration: 14
+PID: Kp=0.264365, Ki=0.001088, Kd=0.000136 had error: 5324.091309
+Iteration: 15
+PID: Kp=0.215186, Ki=0.001550, Kd=0.000834 had error: 5681.026367
+Iteration: 16
+PID: Kp=0.130136, Ki=0.001078, Kd=0.000623 had error: 5970.269043
+Iteration: 17
+PID: Kp=0.205697, Ki=0.001137, Kd=0.000669 had error: 5031.352539
+Iteration: 18
+PID: Kp=0.290491, Ki=0.001313, Kd=0.000697 had error: 5827.715332
+Iteration: 19
+PID: Kp=0.251324, Ki=0.000961, Kd=0.000703 had error: 5539.075684
+Iteration: 20
+PID: Kp=0.169156, Ki=0.001368, Kd=0.000099 had error: 5488.847168
+Iteration: 21
+PID: Kp=0.154717, Ki=0.001148, Kd=0.000090 had error: 5124.065918
+Iteration: 22
+PID: Kp=0.186410, Ki=0.000976, Kd=0.000116 had error: 5180.215332
+Iteration: 23
+PID: Kp=0.234024, Ki=0.001126, Kd=0.000152 had error: 5537.903809
+Iteration: 24
+PID: Kp=0.213996, Ki=0.001245, Kd=0.001062 had error: 5055.485352
+Iteration: 0
